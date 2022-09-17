@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 5 Boilerplate</title>
+    <script src="jquery.min.js"></script>
+    <script src="client.js"></script>
+<!--    <link rel="stylesheet" href="style.css">-->
+</head>
+<body>
+
+<div>
+    <div>
+        <input type="text" id="message-box" />
+        <input type="button" placeholder="Send" value="Send" onclick="getAudio()"/>
+    </div>
+    <div>
+        <input type="text" id="call-to-user" />
+        <input type="button" placeholder="Send" value="Send" onclick="sendMessage()"/>
+    </div>
+    <div>
+        <input type="button" id="callBtn" placeholder="Send" value="Call" onclick="call()"/>
+        <input type="button" id="hangUpBtn" placeholder="Send" value="End" onclick="end()"/>
+    </div>
+</div>
+
+<video id="vid-ply"  autoplay controls>
+</video>
+
+</body>
+</html>
