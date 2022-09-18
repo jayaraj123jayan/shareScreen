@@ -1,6 +1,6 @@
-package com.example.demo.config;
+package com.jayaraj.screen_share.config;
 
-import com.example.demo.handler.SocketHandler;
+import com.jayaraj.screen_share.handler.SocketHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;

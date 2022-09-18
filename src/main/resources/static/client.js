@@ -3,7 +3,7 @@ var name;
 var connectedUser;
   
 //connecting to our signaling server 
-var conn = new WebSocket('ws://192.168.1.13:8080/socket');
+var conn = new WebSocket('ws://192.168.1.13:2121/socket');
   
 conn.onopen = function () { 
    console.log("Connected to the signaling server"); 
@@ -58,7 +58,7 @@ function sendMessage(){
 
 var yourConn;
 var stream;
-function getAudio() {
+
        var configuration = {
           "iceServers": [{ "url": "stun:stun2.1.google.com:19302" }]
        };
@@ -80,22 +80,24 @@ function getAudio() {
          }
       };
 
-     navigator.mediaDevices.getDisplayMedia({
-       video: false,
-       audio: true
-      }).then((input)=>{
+function getAudio() {
+    getDisplayMedia();
+};
+var displayMediaOptions = {
+  video: {
+    logicalSurface: false
+  },
+  audio: true
+};
+function getDisplayMedia(){
+     navigator.mediaDevices.getDisplayMedia(displayMediaOptions).then((input)=>{
            console.log(input)
            stream = input;
-           //using Google public stun server
-
            // setup stream listening
            yourConn.addStream(stream);
 
       })
-
-
-
-};
+}
 
 //initiating a call
 function call() {

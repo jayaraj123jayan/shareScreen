@@ -1,4 +1,4 @@
-package com.example.demo.handler;
+package com.jayaraj.screen_share.handler;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.TextMessage;
@@ -17,7 +17,6 @@ public class SocketHandler extends TextWebSocketHandler {
     @Override
     public void handleTextMessage(WebSocketSession session, TextMessage message)
       throws InterruptedException, IOException {
-        System.out.println(message.getPayload());
         for (WebSocketSession webSocketSession : sessions) {
             if (webSocketSession.isOpen() && !session.getId().equals(webSocketSession.getId())) {
                 webSocketSession.sendMessage(message);
